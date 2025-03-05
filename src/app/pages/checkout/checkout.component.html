@@ -1,0 +1,38 @@
+<section class="bg-slate-100 rounded-md shadow-md p-4 my-4 mx-auto w-2/3">
+
+    <form [formGroup]="detailsForm" (ngSubmit)="detailsSubmit()" >
+        <div class="my-3">
+            @let details = detailsForm.get('email');
+            <label for="details" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">details</label>
+            <input [class]="{
+                'my-valid':!details?.errors && ( details?.touched  || details?.dirty ),
+                'my-invalid':details?.errors && ( details?.touched  || details?.dirty ) ,
+            }" formControlName="details" type="text" id="details"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+        <div class="my-3">
+            @let phone = detailsForm.get('email');
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">phone</label>
+            <input [class]="{
+                'my-valid':!phone?.errors && ( phone?.touched  || phone?.dirty ),
+                'my-invalid':phone?.errors && ( phone?.touched  || phone?.dirty ) ,
+            }" formControlName="phone" type="tel" id="phone"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+
+<div class="my-3">
+    @let city = detailsForm.get('email');
+    <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">city</label>
+    <input [class]="{
+        'my-valid':!city?.errors && ( city?.touched  || city?.dirty ),
+        'my-invalid':city?.errors && ( city?.touched  || city?.dirty ) ,
+    }" formControlName="city" type="text" id="city"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+
+<div>
+    <button class="my-btn">payment <span><i class="fa-brands fa-cc-visa"></i></span></button>
+</div>
+    </form>
+
+</section>

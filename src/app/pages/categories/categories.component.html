@@ -1,0 +1,16 @@
+<section class="  p-4 my-5">
+    <div class="container mx-auto">
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
+           @for(category of categoriesData ; track category._id){
+            <div class="category p-3 border-2 border-teal-500 rounded-md hover:shadow-md duration-200 transition-all hover:shadow-emerald-400">
+                <div class="h-[90%]">
+                    <img [src]="category.image" class="w-full rounded-md h-full" alt="">
+                </div>
+                <div class="font-black text-xl text-center p-3">
+                    <h1> {{category.name}} </h1>
+                </div>
+            </div>
+           }  
+        </div>
+    </div>
+</section>
